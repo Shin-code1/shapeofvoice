@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/* 全体共通 */
+:root {
+  --primary-color: #87CEEB;
+  --secondary-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* loading animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav,
+.navimg,
+h2,
+.logoimg {
+  opacity: 0;
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+/* scroll snap */
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* scroll 矢印 */
+.page {
+  position: relative;
+  scroll-snap-align: start;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+  background-size: cover;
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  translate: -50% 0;
+
+  width: 2vw;
+  height: 2vw;
+  border: solid var(--secondary-color);
+  border-radius: 50%;
+
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  color: var(--secondary-color);
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  40% {
+    transform: translate(-50%, -8px);
+  }
+
+  60% {
+    transform: translate(-50%, -4px);
+  }
+}
+
+/* header共通 */
+header {
+  position: relative;
+  background-image: url("../images/header_background.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-areas:
+    "top top top"
+    "left middle right";
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+header::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4));
+  transition: opacity 3s ease;
+}
+
+header:hover::before {
+  opacity: 0;
+}
+
+header .header_top {
+  grid-area: top;
+  height: 7vh;
+  padding: 0.5vh;
+  display: flex;
+  gap: 20rem;
+  align-items: center;
+}
+
+header .header_top .logoimg {
+  margin-left: 2rem;
+  height: 6vh;
+}
+header .header_top img:hover{
+  filter: brightness(0.8);
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+header .header_top ul {
+  display: flex;
+  list-style: none;
+  gap: 7rem;
+}
+
+header .header_top ul a {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+}
+
+header .header_top ul a:hover {
+  filter: brightness(0.7);
+  transition: 0.4s ease;
+}
+
+header .header_top:hover {
+  background-color: var(--primary-color);
+  transition: 0.8s ease;
+}
+
+header .header_top img {
+  height: 100%;
+}
+
+header .header_left {
+  grid-area: left;
+  padding-right: 17.5vw;
+}
+
+header .header_middle {
+  grid-area: middle;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+header .header_middle h2 {
+  font-size: 3rem;
+  padding: 1rem 1.5rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+header .header_right {
+  grid-area: right;
+  padding-left: 17.5vw;
+}
+
+header .header_right .navimg {
+  padding-top: 8vh;
+  padding-right: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  justify-content: space-between;
+}
+
+header .header_right img {
+  width: 13vw;
+  opacity: 0.9;
+  border-radius: 20px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+header .header_right img:hover {
+  /* 視覚だけ拡大する */
+  transform: scale(1.04);
+  opacity: 1;
+}
+
+/* main共通 */
+
+
+/* main_story */
+#storypage1 #storycontent1,
+#storypage2 #storycontent2,
+#storypage3 #storycontent3 {
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, .4);
+  padding: 2rem;
+  margin-left: 8vw;
+}
+
+#storypage1 h3,
+#storypage2 h3,
+#storypage3 h3 {
+  color: var(--secondary-color);
+  font-size: 3rem;
+}
+
+#storypage1 p,
+#storypage2 p,
+#storypage3 p {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+#storypage1 {
+  background-image: url("../images/story1.png");
+}
+
+#storypage2 {
+  background-image: url("../images/story2.png");
+}
+
+#storypage3 {
+  background-image: url("../images/story3.png");
+}
+
+/* main_characters & _voicecast */
+
+#characterspage,
+#voicecastpage {
+  background-image: url("../images/characters_background.jpg");
+}
+
+#characterspage .characters,
+#voicecastpage .voicecast {
+  height: 100vh;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: left;
+  justify-content: center;
+}
+#characterspage .characters div,
+#voicecastpage .voicecast div{
+  display: flex;
+  gap:3vw;
+}
+
+#characterspage .characters section,
+#voicecastpage .voicecast section {
+  width: 20vw;
+
+  color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, .4);
+  padding: 2rem;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  text-align: center;
+  gap: 0.5vh;
+}
+
+#voicecastpage .voicecast section {
+  width: 25vw;
+}
+
+.characters > :nth-child(2),
+.voicecast > :nth-child(2) {
+  justify-content: right;
+}
+
+#characterspage .characters section img,
+#voicecastpage .voicecast section img {
+  width: 10vw;
+  border-radius: 10px;
+}
+
+/* footer共通 */
+footer {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+footer p {
+  color: var(--secondary-color);
+}
