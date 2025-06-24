@@ -20,7 +20,7 @@ a {
   text-decoration: none;
 }
 
-/* loading animation */
+/* loading & scroll animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -36,12 +36,17 @@ a {
 nav,
 .navimg,
 h2,
-.logoimg {
+.logoimg,
+p,
+h3,
+h4,
+.characters,
+.voicecast {
   opacity: 0;
-  animation-name: fadeInUp;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+}
+
+.animate {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 /* scroll snap */
@@ -140,7 +145,8 @@ header .header_top .logoimg {
   margin-left: 2rem;
   height: 6vh;
 }
-header .header_top img:hover{
+
+header .header_top img:hover {
   filter: brightness(0.8);
   cursor: pointer;
   transition: 0.4s ease;
@@ -283,10 +289,11 @@ header .header_right img:hover {
   align-items: left;
   justify-content: center;
 }
+
 #characterspage .characters div,
-#voicecastpage .voicecast div{
+#voicecastpage .voicecast div {
   display: flex;
-  gap:3vw;
+  gap: 3vw;
 }
 
 #characterspage .characters section,
@@ -310,8 +317,8 @@ header .header_right img:hover {
   width: 25vw;
 }
 
-.characters > :nth-child(2),
-.voicecast > :nth-child(2) {
+.characters> :nth-child(2),
+.voicecast> :nth-child(2) {
   justify-content: right;
 }
 
