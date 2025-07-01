@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Shape of Voice Story</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tools.css">
   <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
 
@@ -38,7 +39,17 @@
       <div class="header_middle">
         <h2>いじめと贖いが紡ぐ<br />耳を澄ませた刹那の物語</h2>
       </div>
-      <div class="header_right">
+            <div class="header_right">
+      </div>
+      <!-- drawer -->
+      <button id="drawerToggle" class="drawer-toggle" aria-controls="headerRight" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="drawer" id="Drawer">
         <div class="navimg">
           <a href="index.html"><img src="./images/nav_home.png" alt="navimg-home"></a>
           <a href="story.html"><img src="./images/nav_story.png" alt="navimg-story"></a>
@@ -58,6 +69,7 @@
     <main id="main_story">
       <section id="storypage1" class="page">
         <div id="storycontent1">
+          <h2 class="eyebrow">ACT 1</h2>
           <h3>声を奪った教室</h3>
           <p>小学校時代、石田将也は転校生・西宮硝子の補聴器を奪い ― 壊し ―
             笑いを取ることで仲間の中心に立とうとする。しかし度重なるいじめの果てに硝子は転校し、矛先を失ったクラスの非難は今度は将也自身に向けられる。彼の世界は反転し、孤立という静寂だけが残った。</p>
@@ -72,6 +84,7 @@
       </section>
       <section id="storypage2" class="page">
         <div id="storycontent2">
+          <h2 class="eyebrow">ACT 2</h2>
           <h3>届かぬ声を探して</h3>
           <p>
             高校生になった将也は、過去の罪を抱えたまま自分を閉ざして生きていた。ある日、思い切って硝子に再会を果たすと、彼女は当時と変わらぬ笑顔で手話を返してくれる。赦しと赎（あがな）いの狭間で揺れながらも、二人は少しずつ歩幅を合わせ、途切れた時間をつなぎ直そうとする。
@@ -87,6 +100,7 @@
       </section>
       <section id="storypage3" class="page">
         <div id="storycontent3">
+          <h2 class="eyebrow">ACT 3</h2>
           <h3>沈黙を破る花火</h3>
           <p>
             夏祭りの夜、硝子が抱えていた絶望がついにあふれ、将也は命がけで彼女の手をつかむ。花火が空を裂く轟音の中で、二人はようやく互いの「声」を聞き取る。倒れ込む川辺、そして文化祭での再出発――傷だらけの心が重なり合い、世界は再び色づき始める。
@@ -100,6 +114,7 @@
   </div>
 
   <script src="js/scrollarrow.js"></script>
+  <script src="js/drawer.js"></script>
 </body>
 
 </html>

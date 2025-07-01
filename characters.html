@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Shape of Voice Characters</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tools.css">
   <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
 
@@ -39,6 +40,16 @@
         <h2>傷だらけの心で<br />言葉よりも<br />深く語り合う彼ら</h2>
       </div>
       <div class="header_right">
+      </div>
+      <!-- drawer -->
+      <button id="drawerToggle" class="drawer-toggle" aria-controls="headerRight" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="drawer" id="Drawer">
         <div class="navimg">
           <a href="index.html"><img src="./images/nav_home.png" alt="navimg-home"></a>
           <a href="story.html"><img src="./images/nav_story.png" alt="navimg-story"></a>
@@ -107,6 +118,7 @@
   </div>
 
   <script src="js/scrollarrow.js"></script>
+  <script src="js/drawer.js"></script>
 </body>
 
 </html>
