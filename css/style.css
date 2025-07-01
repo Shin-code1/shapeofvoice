@@ -4,6 +4,8 @@
 :root {
   --primary-color: rgba(101, 216, 255, 0.65);
   --secondary-color: white;
+  --drawer-width: 280px;
+  --peek-offset: 160px;
 }
 
 * {
@@ -20,91 +22,6 @@ a {
   text-decoration: none;
 }
 
-/* loading & scroll animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-nav,
-.navimg,
-h2,
-.logoimg,
-p,
-h3,
-h4,
-.characters,
-.voicecast {
-  opacity: 0;
-}
-
-.animate {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* scroll snap */
-html,
-body {
-  height: 100%;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
-/* scroll 矢印 */
-.page {
-  position: relative;
-  scroll-snap-align: start;
-  min-height: 100vh;
-  max-height: 100vh;
-  min-width: 100%;
-  background-size: cover;
-}
-
-.scroll-down {
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  translate: -50% 0;
-
-  width: 2vw;
-  height: 2vw;
-  border: solid var(--secondary-color);
-  border-radius: 50%;
-
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  color: var(--secondary-color);
-}
-
-@keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translate(-50%, 0);
-  }
-
-  40% {
-    transform: translate(-50%, -8px);
-  }
-
-  60% {
-    transform: translate(-50%, -4px);
-  }
-}
-
 /* header共通 */
 header {
   position: relative;
@@ -117,6 +34,7 @@ header {
     "top top top"
     "left middle right";
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 header::before {
@@ -184,7 +102,7 @@ header .header_left {
 
 header .header_middle {
   grid-area: middle;
-  height: 100%;
+  /*height: 100%;*/
   display: flex;
   align-items: center;
   text-align: center;
@@ -199,32 +117,9 @@ header .header_middle h2 {
   border-radius: 1rem;
   white-space: nowrap;
 }
-
 header .header_right {
   grid-area: right;
   padding-left: 17.5vw;
-}
-
-header .header_right .navimg {
-  padding-top: 8vh;
-  padding-right: 1vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  justify-content: space-between;
-}
-
-header .header_right img {
-  width: 13vw;
-  opacity: 0.9;
-  border-radius: 20px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-header .header_right img:hover {
-  /* 視覚だけ拡大する */
-  transform: scale(1.04);
-  opacity: 1;
 }
 
 /* main共通 */
@@ -242,6 +137,11 @@ header .header_right img:hover {
   background-color: var(--primary-color);
   padding: 2rem;
   margin-left: 8vw;
+}
+
+#main_story section div .eyebrow {
+  color: var(--secondary-color);
+  margin-bottom: -1rem;
 }
 
 #storypage1 h3,
