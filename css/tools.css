@@ -73,6 +73,10 @@ body {
   animation: bounce 2s infinite;
   color: var(--secondary-color);
 }
+.scroll-down svg{
+  width: 100%;
+  height: 100%;
+}
 
 @keyframes bounce {
 
@@ -93,30 +97,6 @@ body {
   }
 }
 
-/* mouse trail test */
-.trail {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: fade 0.8s forwards;
-}
-
-@keyframes fade {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-
 /* drawer */
 .drawer {
   position: fixed;
@@ -125,7 +105,7 @@ body {
   width: 280px;
   height: 100vh;
   padding: 4rem 2rem 2rem;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
   transform: translateX(100%);
   transition: transform .35s ease;
@@ -153,9 +133,11 @@ body {
   position: fixed;
   top: 50%;
   right: 2rem;
-  transform: translate(0, -50%);
-  transition: transform .35s ease, rotate .35s ease;
+  transform: translateY(-50%);
+  transition: right .35s ease;
   z-index: 999;
+
+
 
   /*style*/
   width: 2vw;
@@ -166,10 +148,15 @@ body {
   background: none;
   padding: 0;
   cursor: pointer;
+  
 
 }
+.drawer-toggle svg{
+  width: 100%;
+  height: 100%;
+}
 .drawer-toggle.open {
-  transform: translate(calc(-1 * var(--drawer-width)), -50%);
+  right: calc(2rem + var(--drawer-width));
 }
 .drawer-toggle.open svg {
   transform: rotate(180deg);
