@@ -29,7 +29,8 @@ p,
 h3,
 h4,
 .characters,
-.voicecast {
+.voicecast,
+.review {
   opacity: 0;
 }
 
@@ -205,16 +206,15 @@ body {
 
 /* drawer card img */
 .drawer .navimg {
-  padding-top: 8vh;
-  padding-right: 1vw;
   display: flex;
   flex-direction: column;
   gap: 1vh;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .navimg img {
-  width: 13vw;
+  width: 11vw;
   opacity: 0.9;
   border-radius: 20px;
   transition: transform 0.4s ease, opacity 0.4s ease;
@@ -225,3 +225,5 @@ body {
   transform: scale(1.04);
   opacity: 1;
 }
+
+/* speech bubble */
