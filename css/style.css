@@ -25,12 +25,27 @@ a {
 /* header共通 */
 header {
   position: relative;
-  background-image: url("../images/header_background.jpg");
   height: 100vh;
   background-repeat: no-repeat;
 
   display: flex;
   flex-direction: column;
+}
+
+#header_index {
+  background-image: url("../images/background_index.jpg");
+}
+
+#header_story {
+  background-image: url("../images/background_story.jpg");
+}
+
+#header_characters {
+  background-image: url("../images/background_characters.jpg");
+}
+
+#header_voicecast {
+  background-image: url("../images/background_voicecast.jpg");
 }
 
 header::before {
@@ -159,15 +174,14 @@ header .header_middle h2 {
   background-image: url("../images/story3.png");
 }
 
-/* main_characters & _voicecast */
+/* main_characters */
 
 #characterspage,
 #voicecastpage {
-  background-image: url("../images/characters_background.jpg");
+  background-image: url("../images/background_char-voicecast.jpg");
 }
 
-#characterspage .characters,
-#voicecastpage .voicecast {
+#characterspage .characters {
   height: 100vh;
   padding: 2rem;
 
@@ -178,14 +192,12 @@ header .header_middle h2 {
   justify-content: center;
 }
 
-#characterspage .characters div,
-#voicecastpage .voicecast div {
+#characterspage .characters div {
   display: flex;
   gap: 3vw;
 }
 
-#characterspage .characters section,
-#voicecastpage .voicecast section {
+#characterspage .characters section {
   width: 20vw;
 
   color: var(--secondary-color);
@@ -201,18 +213,64 @@ header .header_middle h2 {
   gap: 0.5vh;
 }
 
-#voicecastpage .voicecast section {
-  width: 25vw;
-}
 
-.characters> :nth-child(2),
-.voicecast> :nth-child(2) {
+.characters> :nth-child(2) {
   justify-content: right;
 }
 
-#characterspage .characters section img,
-#voicecastpage .voicecast section img {
+#characterspage .characters section img {
   width: 10vw;
+  border-radius: 10px;
+}
+
+/* voicecast */
+#voicecastpage .voicecast {
+  height: 100vh;
+  padding: 2rem;
+
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#voicecastpage .voicecast div {
+  display: flex;
+  flex-direction: column;
+  gap:2.5rem;
+}
+#voicecastpage .voicecast> :nth-child(1){
+  align-self: flex-start;
+}
+#voicecastpage .voicecast> :nth-child(2){
+  align-self: flex-end;
+}
+
+#voicecastpage .voicecast section {
+
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 2rem;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-areas:
+    "img h3"
+    "img p";
+  grid-column-gap:2rem;
+}
+
+#voicecastpage .voicecast section h3 {
+  grid-area: h3;
+}
+
+#voicecastpage .voicecast section p {
+  grid-area: p;
+}
+
+#voicecastpage .voicecast section img {
+  grid-area: img;
+  height: 17vh;
   border-radius: 10px;
 }
 
