@@ -2,7 +2,7 @@
 const FADE_DELAY = 300;
 function runFadeIn(delay = 0) {
   document
-    .querySelectorAll('nav, .navimg, h2, .logoimg, p, h3, h4, .characters, .voicecast')
+    .querySelectorAll('nav, .navimg, h2, .logoimg, p, h3, h4, .characters, .voicecast,.review')
     .forEach(el => {
       el.style.animationDelay = `${delay}ms`;
       el.classList.remove('animate');
