@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 全体共通 */
+/* ------------------------- 全体共通 ------------------------- */
 :root {
   --primary-color: rgba(101, 216, 255, 0.65);
   --secondary-color: white;
@@ -22,7 +22,7 @@ a {
   text-decoration: none;
 }
 
-/* header共通 */
+/* ------------------------- header共通 ------------------------- */
 header {
   position: relative;
   height: 100vh;
@@ -129,10 +129,10 @@ header .header_middle h2 {
   white-space: nowrap;
 }
 
-/* main共通 */
+/* ------------------------- main共通 ------------------------- */
 
 
-/* main_story */
+/* ------------------------- main_story ------------------------- */
 #storypage1 #storycontent1,
 #storypage2 #storycontent2,
 #storypage3 #storycontent3 {
@@ -178,7 +178,7 @@ header .header_middle h2 {
   background-image: url("../images/story3.png");
 }
 
-/* main:characters-voicecast-review 共通背景 */
+/* ------------------------- main:characters-voicecast-review 共通背景 ------------------------- */
 
 #characterspage,
 #voicecastpage,
@@ -186,7 +186,7 @@ header .header_middle h2 {
   background-image: url("../images/background_char-voicecast.jpg");
 }
 
-/* main_characters */
+/* ------------------------- main_characters ------------------------- */
 
 #characterspage .characters {
   height: 100vh;
@@ -230,7 +230,7 @@ header .header_middle h2 {
   border-radius: 10px;
 }
 
-/* voicecast */
+/* ------------------------- main:voicecast ------------------------- */
 #voicecastpage .voicecast {
   height: 100vh;
   padding: 2rem;
@@ -283,7 +283,7 @@ header .header_middle h2 {
   border-radius: 10px;
 }
 
-/* ------------------------- review ------------------------- */
+/* ------------------------- main:review ------------------------- */
 #main_review .review {
   display: flex;
   height: 100vh;
@@ -360,7 +360,7 @@ header .header_middle h2 {
   font-size: 1.5rem;
 }
 
-/* speechbubbleのafterはtool.cssに入っている */
+/*speechbubbleのafterはtool.cssに入っている*/
 #main_review .review section .speech-bubble {
   grid-area: bubble;
   text-align: center;
@@ -376,7 +376,7 @@ header .header_middle h2 {
   font-weight: bold;
 }
 
-/* footer共通 */
+/* ------------------------- footer共通 ------------------------- */
 footer {
   background-color: var(--primary-color);
   display: flex;

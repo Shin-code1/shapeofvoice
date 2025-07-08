@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 全体共通 */
+/* ------------------------- 全体共通 ------------------------- */
 :root {
   --primary-color: rgba(101, 216, 255, 0.65);
   --secondary-color: white;
@@ -8,7 +8,7 @@
   --peek-offset: 160px;
 }
 
-/* loading & scroll animation */
+/* ------------------------- loading & scroll animation ------------------------- */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -38,7 +38,7 @@ h4,
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* scroll snap */
+/* ------------------------- scroll snap ------------------------- */
 html,
 body {
   height: 100%;
@@ -47,7 +47,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* scroll 矢印 */
+/* ------------------------- scroll 矢印 ------------------------- */
 .page {
   position: relative;
   scroll-snap-align: start;
@@ -99,7 +99,7 @@ body {
   }
 }
 
-/* drawer */
+/* ------------------------- drawer ------------------------- */
 .drawer {
   position: fixed;
   top: 0;
@@ -130,7 +130,7 @@ body {
   font: 600 1rem/2 "Noto Sans JP", sans-serif;
 }
 
-/* drawer toggle */
+/* ------------------------- drawer toggle ------------------------- */
 .drawer-toggle {
   position: fixed;
   top: 50%;
@@ -171,7 +171,7 @@ body {
   transition: transform .35s ease;
 }
 
-/* drawer-toggle bounce*/
+/* ------------------------- drawer-toggle bounce ------------------------- */
 @keyframes bounce-x {
 
   0%,
@@ -195,7 +195,7 @@ body {
   animation: bounce-x 2s infinite;
 }
 
-/* drawer peek */
+/* ------------------------- drawer peek ------------------------- */
 .drawer.peek {
   transform: translateX(calc(100% - var(--peek-offset)));
 }
@@ -204,7 +204,7 @@ body {
   transform: translate(calc(-1 * var(--peek-offset)), -50%);
 }
 
-/* drawer card img */
+/* ------------------------- drawer card img ------------------------- */
 .drawer .navimg {
   display: flex;
   flex-direction: column;
@@ -221,9 +221,36 @@ body {
 }
 
 .navimg img:hover {
-  /* 視覚だけ拡大する */
+  /* ------------------------- 視覚だけ拡大する ------------------------- */
   transform: scale(1.04);
   opacity: 1;
 }
 
-/* speech bubble */
+/* ------------------------- speech bubble ------------------------- */
+/*左*/
+#main_review .review > :nth-child(1) .speech-bubble{
+  position: relative;
+}
+#main_review .review > :nth-child(1) .speech-bubble::after{
+  content:'';
+  position:absolute;
+  left:-25px;
+  top:50%;
+  transform:translateY(-50%);
+  border:13px solid transparent;
+  border-right-color:var(--primary-color);
+}
+
+/*右*/
+#main_review .review > :nth-child(2) .speech-bubble{
+  position: relative;
+}
+#main_review .review > :nth-child(2) .speech-bubble::after{
+  content:'';
+  position:absolute;
+  right:-25px;
+  top:50%;
+  transform:translateY(-50%);
+  border:13px solid transparent;
+  border-left-color:var(--primary-color);
+}
