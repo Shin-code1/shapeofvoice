@@ -31,7 +31,7 @@ header {
   display: flex;
   flex-direction: column;
 }
-
+/* background */
 #header_index {
   background-image: url("../images/background_index.jpg");
 }
@@ -64,7 +64,7 @@ header::before {
 header:hover::before {
   opacity: 0;
 }
-
+/* top */
 header .header_top {
   grid-area: top;
   height: 7vh;
@@ -110,7 +110,7 @@ header .header_top:hover {
 header .header_top img {
   height: 100%;
 }
-
+/* catchcopy */
 header .header_middle {
   height: 100%;
   display: flex;
@@ -121,10 +121,11 @@ header .header_middle {
 
 header .header_middle h2 {
   align-self: center;
-  font-size: 3rem;
+  font-size: 4rem;
   padding: 1rem 1.5rem;
   color: white;
-  background-color: var(--primary-color);
+  /*background-color: var(--primary-color);*/
+  text-shadow: 0.3rem 0.3rem 0.5rem var(--primary-color);
   border-radius: 1rem;
   white-space: nowrap;
 }
