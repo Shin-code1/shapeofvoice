@@ -22,6 +22,10 @@ a {
   text-decoration: none;
 }
 
+p,h2,h3{
+  text-shadow: 0.2rem 0.2rem 0.4rem black;
+}
+
 /* ------------------------- header共通 ------------------------- */
 header {
   position: relative;
